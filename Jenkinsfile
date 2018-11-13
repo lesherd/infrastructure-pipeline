@@ -3,7 +3,7 @@ properties([pipelineTriggers([githubPush()])])
 node('linux') {
     git url: 'https://github.com/lesherd/infrastructure-pipeline.git', branch: 'master'
     stage('Test') {
-        sh "aws ec2 describe-instance --region-east-1"
+        sh "aws ec2 describe-instances --region-east-1"
     }
     stage('GetInstances') {    
 		  
